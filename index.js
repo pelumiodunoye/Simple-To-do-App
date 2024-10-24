@@ -42,10 +42,13 @@ addBtn.addEventListener("click", (event) => {
   removeBtn.textContent = "Delete Task";
   removeBtn.classList.add("remove-btn");
   removeBtn.addEventListener("click", () => {
-    if (confirm("Are you sure you want to delete this task?")) {
-      todoList.removeChild(newTask);
-      alert("Task Deleted!");
-    }
+    setTimeout(() => {
+        if (confirm("Are you sure you want to delete this task?")) {
+            todoList.removeChild(newTask);
+            alert("Task Deleted!");
+          }
+    }, 200)
+    
   });
   newTask.appendChild(removeBtn);
 
