@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simple To-do App</title>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <div class="header-container">
+      <h1>To-do List</h1>
+
+      <label for="dark-mode-toggle">
+        Enable Dark mode
+        <input type="checkbox" id="dark-mode-toggle" />
+      </label>
+    </div>
+    <form>
+      <input type="text" id="input" placeholder="Enter a task" />
+      <input type="date" id="dueDate" />
+
+      <button id="add-Btn" class="darkBtn">Add task</button>
+    </form>
+    <ul id="todo-list"></ul>
+
+    <script type="module" src="index.js"></script>
+  </body>
+</html>
