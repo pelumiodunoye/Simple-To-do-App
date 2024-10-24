@@ -21,16 +21,42 @@ addBtn.addEventListener("click", (event) => {
   newTask.classList.add("list-items");
 
   // Complete Task button
+  //   const completeBtn = document.createElement("input");
+  //   completeBtn.type = "checkbox";
+  //   completeBtn.classList.add("complete-task");
+  //   completeBtn.addEventListener("change", () => {
+  //     newTask.classList.toggle("completed");
+  //     const editBtn = newTask.querySelector(".editBtn");
+  //     if (editBtn) {
+  //       newTask.removeChild(editBtn);
+  //     }
+  //   });
+  //   newTask.appendChild(completeBtn);
+
+  // Complete Task button
   const completeBtn = document.createElement("input");
   completeBtn.type = "checkbox";
   completeBtn.classList.add("complete-task");
   completeBtn.addEventListener("change", () => {
-    newTask.classList.toggle("completed");
+    // Mark as completed
+    newTask.classList.add("completed");
+
     const editBtn = newTask.querySelector(".editBtn");
     if (editBtn) {
-      newTask.removeChild(editBtn);
+      newTask.appendChild(editBtn);
     }
+
+    setTimeout(() => {
+      if (confirm("This task is marked as completed, and will be deleted.")) {
+        todoList.removeChild(newTask);
+        alert("Task Deleted!");
+      } else {
+        completeBtn.checked = false;
+        newTask.classList.remove("completed");
+      }
+    }, 2000);
   });
+
   newTask.appendChild(completeBtn);
 
   // Add task text
@@ -42,13 +68,10 @@ addBtn.addEventListener("click", (event) => {
   removeBtn.textContent = "Delete Task";
   removeBtn.classList.add("remove-btn");
   removeBtn.addEventListener("click", () => {
-    setTimeout(() => {
-        if (confirm("Are you sure you want to delete this task?")) {
-            todoList.removeChild(newTask);
-            alert("Task Deleted!");
-          }
-    }, 0)
-    
+    if (confirm("Are you sure you want to delete this task?")) {
+      todoList.removeChild(newTask);
+      alert("Task Deleted!");
+    }
   });
   newTask.appendChild(removeBtn);
 

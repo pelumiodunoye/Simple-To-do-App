@@ -12,5 +12,6 @@ Dark Mode: Users can toggle between light and dark mode for better accessibility
 Responsive Design: The app is responsive and works across various devices and screen sizes.
 
 
-# Live Demo
+# Live Demo Link
+https://pelumiodunoye-simple-to-do-app.netlify.app/
 
