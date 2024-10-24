@@ -47,7 +47,7 @@ addBtn.addEventListener("click", (event) => {
             todoList.removeChild(newTask);
             alert("Task Deleted!");
           }
-    }, 200)
+    }, 0)
     
   });
   newTask.appendChild(removeBtn);
